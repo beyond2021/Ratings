@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Gestures-->
         <scene sceneID="dt3-Iz-g7T">
             <objects>
                 <viewController id="1GO-cb-Wlz" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="RNy-V8-xfy"/>
+                    <tabBarItem key="tabBarItem" title="Gestures" image="Gestures" id="RNy-V8-xfy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bT8-mg-WxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,11 +89,11 @@
             </objects>
             <point key="canvasLocation" x="1870.5" y="-76.5"/>
         </scene>
-        <!--Item-->
+        <!--Players-->
         <scene sceneID="EXB-Kj-vRM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X1P-tY-s44" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hUo-x9-dc4"/>
+                    <tabBarItem key="tabBarItem" title="Players" image="Players" id="hUo-x9-dc4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UqY-jH-tnO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -109,4 +109,8 @@
             <point key="canvasLocation" x="952.5" y="-76.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Gestures" width="30" height="30"/>
+        <image name="Players" width="30" height="30"/>
+    </resources>
 </document>
