@@ -13,6 +13,9 @@
 		2205D5331A76D6E600201F5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2205D5321A76D6E600201F5D /* Images.xcassets */; };
 		2205D5361A76D6E600201F5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2205D5341A76D6E600201F5D /* LaunchScreen.xib */; };
 		2205D5421A76D6E600201F5D /* RatingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2205D5411A76D6E600201F5D /* RatingsTests.swift */; };
+		2207079B1A76E6A100A1529D /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207079A1A76E6A100A1529D /* PlayersViewController.swift */; };
+		2207079D1A76E7E600A1529D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207079C1A76E7E600A1529D /* Player.swift */; };
+		220707A01A76E91000A1529D /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207079F1A76E91000A1529D /* SampleData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		2205D53B1A76D6E600201F5D /* RatingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2205D5401A76D6E600201F5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2205D5411A76D6E600201F5D /* RatingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsTests.swift; sourceTree = "<group>"; };
+		2207079A1A76E6A100A1529D /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
+		2207079C1A76E7E600A1529D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		2207079F1A76E91000A1529D /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +83,11 @@
 		2205D5281A76D6E600201F5D /* Ratings */ = {
 			isa = PBXGroup;
 			children = (
+				2207079E1A76E8E200A1529D /* Model */,
 				2205D52B1A76D6E600201F5D /* AppDelegate.swift */,
 				2205D52D1A76D6E600201F5D /* ViewController.swift */,
 				2205D52F1A76D6E600201F5D /* Main.storyboard */,
+				2207079A1A76E6A100A1529D /* PlayersViewController.swift */,
 				2205D5321A76D6E600201F5D /* Images.xcassets */,
 				2205D5341A76D6E600201F5D /* LaunchScreen.xib */,
 				2205D5291A76D6E600201F5D /* Supporting Files */,
@@ -110,6 +118,15 @@
 				2205D5401A76D6E600201F5D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2207079E1A76E8E200A1529D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2207079C1A76E7E600A1529D /* Player.swift */,
+				2207079F1A76E91000A1529D /* SampleData.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2207079D1A76E7E600A1529D /* Player.swift in Sources */,
 				2205D52E1A76D6E600201F5D /* ViewController.swift in Sources */,
 				2205D52C1A76D6E600201F5D /* AppDelegate.swift in Sources */,
+				220707A01A76E91000A1529D /* SampleData.swift in Sources */,
+				2207079B1A76E6A100A1529D /* PlayersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +425,7 @@
 				2205D5471A76D6E600201F5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2205D5481A76D6E600201F5D /* Build configuration list for PBXNativeTarget "RatingsTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +434,7 @@
 				2205D54A1A76D6E600201F5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

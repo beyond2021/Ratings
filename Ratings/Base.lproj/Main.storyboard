@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="144" y="441.75"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Players View Controller-->
         <scene sceneID="E9R-VC-BVZ">
             <objects>
-                <tableViewController id="2RU-45-HRG" sceneMemberID="viewController">
+                <tableViewController id="2RU-45-HRG" customClass="PlayersViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uDD-Ct-ekZ">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
