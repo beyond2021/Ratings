@@ -10,14 +10,6 @@ import UIKit
 import iAd
 
 class PlayersViewController: UITableViewController {
-    //Unwind segue from player detail
-    @IBAction func cancelToPlayersViewController(segue:UIStoryboardSegue) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @IBAction func savePlayerDetail(segue:UIStoryboardSegue) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
     
     
     
@@ -25,6 +17,29 @@ class PlayersViewController: UITableViewController {
     var players: [Player] = playersData //Here we add a player array property
     /*
     We could simply have set up the sample data in PlayersViewController when defining the players variable above. But because this data might later be provided from a plist or an SQL file, it’s wise to handle loading the data outside of the view controller.*/
+    
+    //Unwind segue from player detail
+    //Unwind Methods
+    //@IBAction func methodname(segue:UIStoryboardSegue)
+    @IBAction func cancelToPlayersViewController(segue:UIStoryboardSegue) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func savePlayerDetail(segue:UIStoryboardSegue) {
+        // dismissViewControllerAnimated(true, completion: nil)
+        let playerDetailsViewController = segue.sourceViewController as PlayerDetailsViewController
+        
+        //add the new player to the players array
+        players.append(playerDetailsViewController.player)
+        
+        //update the tableView
+        let indexPath = NSIndexPath(forRow: players.count-1, inSection: 0)
+        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        
+        //hide the detail view controller
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
