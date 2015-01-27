@@ -35,6 +35,16 @@ class PlayerDetailsViewController: UITableViewController {
     var player:Player! //This does not instantiate the property but the exclamation mark, defining it as an implicitly unwrapped optional, means that it must be instantiated and have a value before using it.
     
     
+    required init(coder aDecoder: NSCoder) {
+        println("init PlayerDetailsViewController")
+        super.init(coder: aDecoder)
+    }
+    
+    deinit {
+        println("deinit PlayerDetailsViewController")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
