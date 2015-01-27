@@ -18,6 +18,7 @@
 		220707A01A76E91000A1529D /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2207079F1A76E91000A1529D /* SampleData.swift */; };
 		22CD069E1A78073A00C47172 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CD069D1A78073A00C47172 /* iAd.framework */; };
 		22CD06A11A780CDA00C47172 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD06A01A780CDA00C47172 /* PlayerCell.swift */; };
+		22CD06A71A781DD500C47172 /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CD06A61A781DD500C47172 /* PlayerDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		2207079F1A76E91000A1529D /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		22CD069D1A78073A00C47172 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		22CD06A01A780CDA00C47172 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		22CD06A61A781DD500C47172 /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			children = (
 				2205D52D1A76D6E600201F5D /* ViewController.swift */,
 				2207079A1A76E6A100A1529D /* PlayersViewController.swift */,
+				22CD06A61A781DD500C47172 /* PlayerDetailsViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				22CD06A11A780CDA00C47172 /* PlayerCell.swift in Sources */,
 				2207079D1A76E7E600A1529D /* Player.swift in Sources */,
 				2205D52E1A76D6E600201F5D /* ViewController.swift in Sources */,
+				22CD06A71A781DD500C47172 /* PlayerDetailsViewController.swift in Sources */,
 				2205D52C1A76D6E600201F5D /* AppDelegate.swift in Sources */,
 				220707A01A76E91000A1529D /* SampleData.swift in Sources */,
 				2207079B1A76E6A100A1529D /* PlayersViewController.swift in Sources */,

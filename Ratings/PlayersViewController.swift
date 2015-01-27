@@ -10,6 +10,17 @@ import UIKit
 import iAd
 
 class PlayersViewController: UITableViewController {
+    //Unwind segue from player detail
+    @IBAction func cancelToPlayersViewController(segue:UIStoryboardSegue) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func savePlayerDetail(segue:UIStoryboardSegue) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
     
     var players: [Player] = playersData //Here we add a player array property
     /*
