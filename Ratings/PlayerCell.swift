@@ -9,7 +9,12 @@
 import UIKit
 
 class PlayerCell: UITableViewCell {
+    
+     
+    @IBOutlet weak var nameLabel1: UILabel!
+    @IBOutlet weak var gameLabel1: UILabel!
 
+    @IBOutlet weak var ratingImageView1: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

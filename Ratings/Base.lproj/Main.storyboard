@@ -73,7 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="55" id="yMW-l5-rhm">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="55" id="yMW-l5-rhm" customClass="PlayerCell" customModule="Ratings" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yMW-l5-rhm" id="rmE-uU-mog">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -162,6 +162,11 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="gameLabel1" destination="0Mf-8g-9wh" id="M0U-cu-pGk"/>
+                                    <outlet property="nameLabel1" destination="WfM-3a-JcD" id="1Xx-jN-nJI"/>
+                                    <outlet property="ratingImageView1" destination="vES-Rn-4k9" id="Krz-oo-7Xl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

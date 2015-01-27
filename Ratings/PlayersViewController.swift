@@ -18,6 +18,7 @@ class PlayersViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
+        self.title = "Players"
     }
     
     // MARK: - TableView DataCource Methods
@@ -48,6 +49,7 @@ class PlayersViewController: UITableViewController {
     }
 */
     // MARK: - Custom label in cells
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PlayerCell", forIndexPath: indexPath) as UITableViewCell //1
         
@@ -64,8 +66,19 @@ class PlayersViewController: UITableViewController {
         }
         return cell
     }
-    
-    
+*/
+    // MARK: - Custom Cell Option
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)
+        -> UITableViewCell {
+            let cell = tableView.dequeueReusableCellWithIdentifier("PlayerCell", forIndexPath: indexPath)
+                as PlayerCell
+            
+            let player = players[indexPath.row] as Player
+            cell.nameLabel1.text = player.name
+            cell.gameLabel1.text = player.game
+            cell.ratingImageView1.image = self.imageForRating(player.rating)
+            return cell
+    }
     
     /*
     Note: In this app you’re using only one prototype cell but if your table needs to display different kinds of cells then you can simply add additional prototype cells to the storyboard. You can either duplicate the existing cell to make a new one, or increment the value of the Table View’s Prototype Cells attribute. Be sure to give each cell its own re-use identifier, though.*/
