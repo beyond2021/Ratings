@@ -27,14 +27,28 @@ It is not unthinkable that you might want to have a single table view that combi
 import UIKit
 
 class PlayerDetailsViewController: UITableViewController {
-
+    
+    var game:String = "Chess" // a property to hold the selected game so that you can store it in the Player object later. Give it a default of “Chess” so you always have a game selected for new players.
+    
     @IBOutlet weak var nameTextField: UITextField! // Do not do this with prototype cells.
     
     @IBOutlet weak var detailLabel: UILabel!
     
     var player:Player! //This does not instantiate the property but the exclamation mark, defining it as an implicitly unwrapped optional, means that it must be instantiated and have a value before using it.
     
+    // Unwind Segue Method.
+    @IBAction func selectedGame(segue:UIStoryboardSegue) {
+        // This code will get executed once the user selects a game from the Choose Game Scene. This method updates both the label on screen and the game property based on the game selected. It also pops the GamePickerViewController off the navigation controller’s stack. Now hook up the cell in the GamePicker.
+        
+        let gamePickerViewController = segue.sourceViewController as GamePickerViewController
+        if let selectedGame = gamePickerViewController.selectedGame {
+            detailLabel.text = selectedGame
+            game = selectedGame
+        }
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
+   //Memopry checkers
     required init(coder aDecoder: NSCoder) {
         println("init PlayerDetailsViewController")
         super.init(coder: aDecoder)
@@ -48,11 +62,7 @@ class PlayerDetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        detailLabel.text = game // Display chess
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,13 +77,25 @@ class PlayerDetailsViewController: UITableViewController {
         }
     }
     
+    /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SavePlayerDetail" {
             //The prepareForSegue(_:sender:) method creates a new Player instance with default values for game and rating. It does this only for a segue that has the identifier of SavePlayerDetail.
             player = Player(name: self.nameTextField.text, game: "Chess", rating: 1)
         }
     }
+*/
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //the unwind segue going back to the Players list
+        if segue.identifier == "SavePlayerDetail" {
+            player = Player(name: nameTextField.text, game:game, rating: 1)
+        }
+        if segue.identifier == "PickGame" {
+            //the push segue going forwards to the Game Picker screen.
+            let gamePickerViewController = segue.destinationViewController as GamePickerViewController
+            gamePickerViewController.selectedGame = game
+        }
+    }
     
-
    
 }

@@ -25,6 +25,12 @@ class GamePickerViewController: UITableViewController {
             "Spin the Bottle",
             "Texas Hold'em Poker",
             "Tic-Tac-Toe"]
+        
+        if let game = selectedGame {
+            selectedGameIndex = find(games, game)!
+        }
+        //This takes the selectedGame you passed in from the PlayerDetailsViewController and translates it to an index that will be used to place a checkmark on that game. The find() will search the games array for a String matching selectedGame and will set the selectedGameIndex to the index where the match was found. You’ll use that index to set a checkmark in the table view cell
+        
     }    
     //You just added a new String array called games and populated it with some hardcoded values in.
     
@@ -79,6 +85,19 @@ class GamePickerViewController: UITableViewController {
         //update the checkmark for the current row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = .Checkmark
+    }
+    //This method is needed because Unfortunately, the unwind segue method is performed before the tableView(_:didSelectRowAtIndexPath:) method, so that the selectedGameIndex is not updated in time. Fortunately, we can override prepareForSegue(_:sender:) and complete that operation before the unwind happens.
+    //The sender parameter of prepareForSegue(_:sender:) is the object that initiated the segue, which in this case was the game cell that was selected. So you can use that cell’s indexPath to locate the selected game in the games array then set selectedGame so it is available in the unwind segue    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SaveSelectedGame" {
+            let cell = sender as UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            selectedGameIndex = indexPath?.row
+            if let index = selectedGameIndex {
+                selectedGame = games[index]
+            }
+        }
     }
     
     
